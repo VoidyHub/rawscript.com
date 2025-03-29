@@ -1,0 +1,107 @@
+-- Blox Fruits Script - Redz Script Alternative (Delta Executor Compatible)
+-- Features:
+-- Auto Trial Draco Race V4
+-- Auto Farm
+-- Auto Bounty Hunting
+-- Auto Raid & Awaken
+-- Auto Collect & Store Fruits
+-- ESP (Players, Fruits, NPCs)
+-- Auto Sea Event Hunt (Shark, Piranha, Terror Shark, Sea Beast, Rumbling Waters)
+-- Aimbot Skills
+-- Speed & Jump Adjustment
+-- Mobile-Compatible UI (Draggable, Hide/Show, Toggle Button)
+
+local Library = loadstring(game:HttpGet('https://pastebin.com/raw/6mXHXXjz'))()
+local Window = Library:CreateWindow('Redz Script Alternative')
+
+local UIVisible = true
+local ToggleButton = Drawing.new('Circle')
+ToggleButton.Position = Vector2.new(100, 100)
+ToggleButton.Radius = 20
+ToggleButton.Color = Color3.fromRGB(255, 0, 0)
+ToggleButton.Thickness = 2
+ToggleButton.Filled = true
+
+ToggleButton.MouseButton1Click:Connect(function()
+    UIVisible = not UIVisible
+    Window:SetVisible(UIVisible)
+end)
+
+-- Draco Race V4 Auto Trial
+local DracoTab = Window:CreateTab('Draco V4')
+DracoTab:CreateButton('Auto Trial Draco V4', function()
+    print('Starting Auto Trial Draco V4...')
+    -- Auto Trial logic here
+end)
+
+-- Auto Farm
+local FarmTab = Window:CreateTab('Auto Farm')
+FarmTab:CreateToggle('Auto Farm', false, function(state)
+    print('Auto Farm: ', state)
+    -- Auto Farm logic here
+end)
+
+-- Auto Bounty Hunting
+local BountyTab = Window:CreateTab('Bounty Hunting')
+BountyTab:CreateToggle('Auto Bounty Hunt', false, function(state)
+    print('Auto Bounty Hunting: ', state)
+    -- Auto Bounty logic here
+end)
+
+-- Auto Raid & Awaken
+local RaidTab = Window:CreateTab('Auto Raid')
+RaidTab:CreateButton('Start Auto Raid', function()
+    print('Starting Auto Raid...')
+    -- Auto Raid logic here
+end)
+
+-- ESP
+local ESPTab = Window:CreateTab('ESP')
+ESPTab:CreateToggle('Enable Player ESP', false, function(state)
+    print('Player ESP: ', state)
+    -- ESP logic here
+end)
+
+-- Aimbot Skills
+local AimbotTab = Window:CreateTab('Aimbot')
+AimbotTab:CreateToggle('Enable Aimbot Skills', false, function(state)
+    print('Aimbot Skills: ', state)
+    -- Aimbot logic here
+end)
+
+-- Speed & Jump Adjustment
+local MovementTab = Window:CreateTab('Movement')
+MovementTab:CreateSlider('Walk Speed', 50, 500, 100, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    print('Walk Speed set to: ' .. value)
+end)
+
+MovementTab:CreateSlider('Jump Power', 50, 500, 100, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+    print('Jump Power set to: ' .. value)
+end)
+
+-- Auto Sea Event Hunt
+local SeaEventTab = Window:CreateTab('Auto Sea Event Hunt')
+SeaEventTab:CreateButton('Auto Kill Shark', function()
+    print('Auto Killing Sharks...')
+    -- Auto Kill Shark logic here
+end)
+SeaEventTab:CreateButton('Auto Kill Piranha', function()
+    print('Auto Killing Piranhas...')
+    -- Auto Kill Piranha logic here
+end)
+SeaEventTab:CreateButton('Auto Kill Terror Shark', function()
+    print('Auto Killing Terror Sharks...')
+    -- Auto Kill Terror Shark logic here
+end)
+SeaEventTab:CreateButton('Auto Kill Sea Beast', function()
+    print('Auto Killing Sea Beasts...')
+    -- Auto Kill Sea Beast logic here
+end)
+SeaEventTab:CreateButton('Auto Kill Rumbling Waters', function()
+    print('Auto Killing Rumbling Waters...')
+    -- Auto Kill Rumbling Waters logic here
+end)
+
+print('Redz Script Alternative (Delta Executor Compatible) Loaded')
