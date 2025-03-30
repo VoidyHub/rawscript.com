@@ -1,0 +1,170 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name ="Voidy", HidePremium = false, SaveConfig = true, ConfigFolder = "Blox Fruit"})
+
+local Tab = Window:MakeTab({
+    Name = "Script",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Function to execute a script
+local function ExecuteScript(url)
+    loadstring(game:HttpGet(url))()
+end
+
+Tab:AddToggle({
+    Name = "RedZ",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://pastefy.app/ACOX6D6h/raw")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Teddy-Hop",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/Teddy-Premium")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Quantum",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/Trustmenotcondom/QTONYX/refs/heads/main/QuantumOnyx.lua")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Min-Hop",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinHopFull")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Astral",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Zush-Hop",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/stuckez999/main/refs/heads/main/zushhubpro.txt")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Zis-Hop",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisRobloxHop")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Tsuo",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Vxeze-Hub",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/Skidlamcho.txt")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Relz",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/farghii/relzhub/main/execute.hack")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Xeter-V2",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            getgenv().Version = "V2"
+            ExecuteScript("https://raw.githubusercontent.com/LuaCrack/Loader/main/Xeter.lua")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Xero-AutoBounty",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            getgenv().Configs = {
+                ["Team"] = "Pirates",
+                ["Speed Tween"] = 350,
+                ["Auto turn on race v3"] = true,
+                ["Auto turn on race v4"] = true,
+                ["Click Time"] = 0.2,
+                ["White Screen"] = false,
+                ["Chat"] = {["Enable"] = false, ["Message"] = {"ez"}},
+                ["Run When Low Health"] = {["Enable"] = true, ["Health"] = 3500, ["Come back"] = true},
+                ["Region"] = "Singapore",
+                ["Weapons"] = {["Melee"] = {["Enable"] = true, ["Delay"] = 1.75, ["Order"] = 3}},
+                ["Theme"] = {["Enable"] = true, ["Hide Theme"] = true, ["Name"] = "Gojo"},
+                ["Webhook"] = {["Enable"] = false, ["Url"] = ""}
+            }
+            ExecuteScript("https://scripts.alchemyhub.xyz")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Hoho-AutoBounty",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/Skidlamcho.txt")
+        end
+    end      
+})
+
+Tab:AddToggle({
+    Name = "Blue-x",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            ExecuteScript("https://pastebin.com/raw/YourScriptURLHere")
+        end
+    end      
+})
+
+OrionLib:Init()
