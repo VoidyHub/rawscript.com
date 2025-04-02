@@ -1,0 +1,82 @@
+local Library = loadstring(game:HttpGet('https://pastebin.com/raw/EdJT9EGX'))()  -- Simple UI Library
+local Window = Library:CreateWindow('Keyless Hoho Hub')
+
+local FarmTab = Window:CreateTab('Auto Farm')
+local StatsTab = Window:CreateTab('Stats')
+local TeleportTab = Window:CreateTab('Teleport')
+local ESPTab = Window:CreateTab('ESP')
+local MiscTab = Window:CreateTab('Misc')
+
+FarmTab:CreateButton('Auto Farm Level', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/autoFarmScript'))()
+end)
+
+FarmTab:CreateButton('Auto Farm Bosses', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/autoBossFarm'))()
+end)
+
+StatsTab:CreateButton('Auto Stats Allocation', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/autoStats'))()
+end)
+
+TeleportTab:CreateButton('Teleport to Island', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/teleport'))()
+end)
+
+ESPTab:CreateButton('Enable ESP', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/espScript'))()
+end)
+
+MiscTab:CreateButton('Devil Fruit Sniper', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/devilFruitSniper'))()
+end)
+
+MiscTab:CreateButton('Item Purchasing', function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/itemPurchasing'))()
+end)
+
+MiscTab:CreateButton('Infinite Observation Haki Range', function()
+    game:GetService('Players').LocalPlayer.Character.HumanoidRootPart:FindFirstChild('ObservationHaki'):Destroy() -- Removes range limitation
+end)
+
+MiscTab:CreateButton('Infinite Portal Dash', function()
+    local mt = getrawmetatable(game)
+    setreadonly(mt, false)
+    local old = mt.__namecall
+    mt.__namecall = newcclosure(function(...) 
+        local method = getnamecallmethod()
+        if tostring(method) == 'FireServer' then
+            return nil
+        end
+        return old(...)
+    end)
+end)
+
+MiscTab:CreateButton('No Fog', function()
+    game.Lighting.FogEnd = 1e10
+end)
+
+MiscTab:CreateButton('Boost FPS', function()
+    for _, v in pairs(game:GetDescendants()) do
+        if v:IsA('Part') or v:IsA('MeshPart') or v:IsA('UnionOperation') then
+            v.Material = Enum.Material.SmoothPlastic
+            v.Transparency = 0.5
+        elseif v:IsA('Decal') or v:IsA('Texture') then
+            v:Destroy()
+        end
+    end
+end)
+
+MiscTab:CreateButton('Always Day', function()
+    game.Lighting.ClockTime = 14
+end)
+
+MiscTab:CreateButton('Full Bright', function()
+    game.Lighting.Brightness = 2
+    game.Lighting.GlobalShadows = false
+    game.Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
+end)
+
+Library:ToggleUI(true)
+
+print('Keyless Hoho Hub Loaded Successfully')
