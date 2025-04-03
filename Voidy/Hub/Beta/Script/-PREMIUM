@@ -1,0 +1,116 @@
+-- Voidy Hub - Compatible with All Executors (Delta Beta, Codex, Trigon, KRNL, etc.)
+-- Mobile & PC Compatible
+
+local success, Library = pcall(function()
+    return loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Library/Main/main/Source.lua'))()
+end)
+
+if not success or not Library then
+    warn('Voidy Hub: Failed to load UI Library. Ensure your executor supports HttpGet and loadstring.')
+    return
+end
+
+local Window = Library:CreateWindow({
+    Name = 'Voidy Hub',
+    Theme = 'Red',
+    Background = 'Blossoms in Japan',
+    Hideable = true,
+    Draggable = true,
+    Rounded = true,
+    SmoothScrolling = true,
+    MinimizeButton = true,
+    CloseButton = true
+})
+
+local Tabs = {
+    Farm = Window:CreateTab('🌸 Farm'),
+    Teleport = Window:CreateTab('🌸 Teleport'),
+    Player = Window:CreateTab('🌸 Player'),
+    Events = Window:CreateTab('🌸 Events'),
+    Settings = Window:CreateTab('🌸 Settings')
+}
+
+-- Auto Farm
+Tabs.Farm:CreateSection('Auto Farm Settings')
+Tabs.Farm:CreateToggle('✅ Auto Farm Level', function(State)
+    _G.AutoFarm = State
+    while _G.AutoFarm and task.wait() do
+        pcall(function()
+            -- Auto farm code here
+        end)
+    end
+end)
+
+Tabs.Farm:CreateToggle('✅ Auto Mastery Farm', function(State)
+    _G.AutoMastery = State
+    while _G.AutoMastery and task.wait() do
+        pcall(function()
+            -- Auto mastery farm code here
+        end)
+    end
+end)
+
+-- Teleport
+Tabs.Teleport:CreateSection('Sea Selection')
+Tabs.Teleport:CreateButton('🌊 Teleport to Sea 1', function()
+    pcall(function()
+        -- Teleport code to Sea 1
+    end)
+end)
+
+Tabs.Teleport:CreateButton('🌊 Teleport to Sea 2', function()
+    pcall(function()
+        -- Teleport code to Sea 2
+    end)
+end)
+
+Tabs.Teleport:CreateButton('🌊 Teleport to Sea 3', function()
+    pcall(function()
+        -- Teleport code to Sea 3
+    end)
+end)
+
+-- ESP
+Tabs.Player:CreateSection('Player Settings')
+Tabs.Player:CreateToggle('🔍 Player ESP', function(State)
+    _G.PlayerESP = State
+    while _G.PlayerESP and task.wait() do
+        pcall(function()
+            -- ESP code here
+        end)
+    end
+end)
+
+-- Settings
+Tabs.Settings:CreateSection('Visual Settings')
+Tabs.Settings:CreateToggle('🌟 FPS Boost', function(State)
+    pcall(function()
+        if State then
+            game:GetService('Lighting').GlobalShadows = false
+            game:GetService('Lighting').Brightness = 2
+        else
+            game:GetService('Lighting').GlobalShadows = true
+            game:GetService('Lighting').Brightness = 1
+        end
+    end)
+end)
+
+Tabs.Settings:CreateToggle('🌟 Full Bright', function(State)
+    pcall(function()
+        if State then
+            game:GetService('Lighting').Ambient = Color3.fromRGB(255, 255, 255)
+        else
+            game:GetService('Lighting').Ambient = Color3.fromRGB(127, 127, 127)
+        end
+    end)
+end)
+
+Tabs.Settings:CreateToggle('🌟 Always Day', function(State)
+    pcall(function()
+        if State then
+            game:GetService('Lighting').ClockTime = 12
+        end
+    end)
+end)
+
+print('Voidy Hub Loaded Successfully')
